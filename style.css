@@ -308,9 +308,9 @@ footer{
 
 /* Caja del formulario */
 #formContacto {
-  background-color: #1e1e1e; /* Fondo gris oscuro */
-  border: 1px solid #333;   /* Borde sutil */
-  border-radius: 12px;      /* Bordes redondeados */
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 12px;
   padding: 2rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
   transition: transform 0.2s ease-in-out;
@@ -322,17 +322,17 @@ footer{
 
 /* Inputs y textarea */
 #formContacto .form-control {
-  border-radius: 8px;          /* Bordes más suaves */
-  border: 1px solid #555;      /* Bordes gris oscuro */
-  background-color: #fff;      /* Fondo blanco */
-  padding: 0.8rem 1rem;        /* Espaciado interno */
+  border-radius: 8px;
+  border: 1px solid #555;
+  background-color: #fff;
+  padding: 0.8rem 1rem;
   font-size: 1rem;
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 /* Efecto al enfocar */
 #formContacto .form-control:focus {
-  border-color: #dc3545; /* Rojo bootstrap */
+  border-color: #dc3545;
   box-shadow: 0 0 8px rgba(220, 53, 69, 0.5);
 }
 
@@ -426,4 +426,5 @@ footer{
 
 .btn-rojo-oscuro:hover {
   background-color: #a30000; /* Un rojo oscuro un poco más claro para el hover */
+
 }
