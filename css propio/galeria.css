@@ -1,0 +1,286 @@
+
+/* Estilo general */
+body {
+  font-family: 'Montserrat', Bold;
+  margin: 0;
+  background-image: url(imagenes/fondo1.png);
+}
+
+body {
+  background: url("../imagenes/fondo1.png") no-repeat center center fixed;
+  background-size: cover;
+}
+
+
+h1 {
+  font-family: 'Montserrat';
+  text-align: center;
+  color: white; /* rojo */
+  padding: 20px;
+  font-weight: bold;
+}
+
+/* Galería */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* más grandes */
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+
+/* Tarjetas */
+.card {
+  background: #fff;
+  border-radius: 8px;
+  border-color: #4C0708;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.2s;
+
+  /* Animación inicial */
+  opacity: 0;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Hover sutil */
+.card:hover {
+  transform: scale(1.02);
+}
+
+/* Imágenes */
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Texto */
+.card p {
+  margin: 0;
+  padding: 10px;
+  color: #000; /* negro */
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Montserrat';
+}
+
+/* Animación de entrada */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Cascada de entrada */
+.card:nth-child(1) { animation-delay: 0.2s; }
+.card:nth-child(2) { animation-delay: 0.4s; }
+.card:nth-child(3) { animation-delay: 0.6s; }
+.card:nth-child(4) { animation-delay: 0.8s; }
+.card:nth-child(5) { animation-delay: 1s; }
+.card:nth-child(6) { animation-delay: 1.2s; }
+
+/* Footer súper compacto */
+.footer {
+  padding: 10px 0 !important;   /* menos espacio arriba/abajo */
+  font-size: 0.8rem;            /* texto más pequeño */
+  line-height: 1.2;             /* menos separación entre líneas */
+  color: #ccc;
+}
+
+.footer .row {
+  margin: 0 !important;         /* eliminamos márgenes de las filas */
+}
+
+.footer .col-6,
+.footer .col-md-2,
+.footer .col-md-5 {
+  margin-bottom: 0 !important;  /* quitamos separación extra */
+}
+
+.footer .py-5 {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
+
+.footer .my-4 {
+  margin-top: 0.3rem !important;
+  margin-bottom: 0.3rem !important;
+}
+
+.footer .border-top {
+  margin-top: 5px !important;
+  padding-top: 5px !important;
+}
+
+/* Footer personalizado */
+.footer {
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.footer h5 {
+  color: #b30000; /* rojo */
+}
+
+.footer a {
+  color: #333;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #b30000;
+}
+
+/* Evita que el footer ocupe toda la pantalla */
+.footer {
+  min-height: auto !important;
+  height: auto !important;
+  display: block !important;
+  align-items: unset !important;
+  text-align: left !important;
+}
+.footer p{
+  color: #4C0708;
+}
+
+
+.card img {
+  width: 100%;
+  height: 250px; /* puedes ajustar el alto a tu gusto */
+  object-fit: cover; /* recorta la imagen para que encaje */
+  display: block;
+}
+
+/* Imágenes con zoom al pasar el mouse */
+.card img {
+  width: 100%;
+  height: 250px; /* altura uniforme */
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease; /* transición suave */
+}
+
+.card img:hover {
+  transform: scale(1.1); /* zoom */
+}
+
+
+
+
+
+/*css de la hamburguesa*/
+
+/* Botón hamburguesa */
+.menu-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 35px;
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.menu-btn span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background: white;
+  border-radius: 2px;
+  transition: 0.4s;
+}
+
+/* Animación de X */
+.menu-btn.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.menu-btn.active span:nth-child(2) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Menú lateral */
+.menu {
+  position: fixed;
+  top: 60px;       /* baja un poco desde arriba */
+  right: 20px;     /* separado del borde derecho */
+  width: 180px;    /* ancho del cuadro */
+  background: #fff;
+  border-radius: 12px; /* bordes redondeados */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: all 0.3s ease-in-out;
+  z-index: 999;
+}
+
+.menu.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0); /* efecto suave al aparecer */
+}
+
+.menu a {
+  color: #333;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+
+.menu a:hover {
+  color: #4C0708; /* rojo bonito al pasar el mouse */
+}
+
+/* cierra hamburguesa*/
+
+
+
+
+/* Footer súper compacto */
+.footer {
+  padding: 10px 0 !important;   /* menos espacio arriba/abajo */
+  font-size: 0.8rem;            /* texto más pequeño */
+  line-height: 1.2;             /* menos separación entre líneas */
+}
+
+.footer .row {
+  margin: 0 !important;         /* eliminamos márgenes de las filas */
+}
+
+.footer .col-6,
+.footer .col-md-2,
+.footer .col-md-5 {
+  margin-bottom: 0 !important;  /* quitamos separación extra */
+}
+
+.footer .py-5 {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
+
+.footer .my-4 {
+  margin-top: 0.3rem !important;
+  margin-bottom: 0.3rem !important;
+}
+
+.footer .border-top {
+  margin-top: 5px !important;
+  padding-top: 5px !important;
+}

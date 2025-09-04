@@ -1,0 +1,82 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  border: none; /* elimina cualquier línea rara */
+}
+
+/* Contenedor principal con scroll snap */
+.scroll-container {
+  height: 100dvh; /* evita problemas con barras del navegador */
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  overscroll-behavior-y: contain;
+  scroll-behavior: smooth;
+}
+
+/* Cada sección ocupa toda la pantalla */
+#scrollContainer > section {
+  min-height: 100dvh;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+;
+  scroll-snap-align: start;
+}
+
+/* Animación de entrada */
+.section-fade-in {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease-in-out;
+}
+
+.section-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Navegación de puntos */
+.scroll-dots {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.scroll-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.scroll-dot.active {
+  background: white;
+  transform: scale(1.2);
+}
+
+/* Ajustes del contenido dentro de las secciones */
+.section-content {
+  width: 100%;
+  max-width: none; /* ya no hay límite de 1200px */
+  padding: 2rem;
+}
+
+
+.footer .section-content,
+.footer .container {
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+}

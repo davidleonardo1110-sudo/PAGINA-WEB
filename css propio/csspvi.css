@@ -1,0 +1,197 @@
+/*css de la hamburguesa*/
+
+/* Botón hamburguesa */
+.menu-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 35px;
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.menu-btn span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background: white;
+  border-radius: 2px;
+  transition: 0.4s;
+}
+
+/* Animación de X */
+.menu-btn.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.menu-btn.active span:nth-child(2) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Menú lateral */
+.menu {
+  position: fixed;
+  top: 60px;       /* baja un poco desde arriba */
+  right: 20px;     /* separado del borde derecho */
+  width: 180px;    /* ancho del cuadro */
+  background: #fff;
+  border-radius: 12px; /* bordes redondeados */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: all 0.3s ease-in-out;
+  z-index: 999;
+}
+
+.menu.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0); /* efecto suave al aparecer */
+}
+
+.menu a {
+  color: #333;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+
+.menu a:hover {
+  color: #4C0708; /* rojo bonito al pasar el mouse */
+}
+
+/* cierra hamburguesa*/
+
+body {
+  background: url("../imagenes/fondo1.png") no-repeat center center fixed;
+
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+}
+
+.titulo-seccion {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ccc;
+}
+
+.subtitulo {
+  color: #aaa;
+  font-size: 1.1rem;
+}
+
+.video-card {
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.video-card:hover {
+  transform: translateY(-5px);
+}
+
+.video-container video {
+  width: 100%;         /* ocupa todo el ancho disponible del contenedor */
+  max-width: 800px;    /* tamaño máximo del video */
+  height: auto;        /* mantiene la proporción original */
+  border-radius: 12px; /* esquinas redondeadas opcional */
+  object-fit: cover;   /* recorta para llenar el cuadro sin deformarse */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.video-card:hover {
+  transform: translateY(-5px);
+}
+
+/* ==== Contenedor video con proporción ==== */
+.video-wrap {
+  flex: 1;                /* ocupa todo el espacio disponible */
+  background: #000;
+}
+
+.video-wrap video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;       /* recorta sin deformar */
+}
+
+/* Textos */
+.video-card h5,
+.video-card p {
+  margin: 8px 12px;
+}
+
+/* Footer súper compacto */
+.footer {
+  padding: 10px 0 !important;   /* menos espacio arriba/abajo */
+  font-size: 0.8rem;            /* texto más pequeño */
+  line-height: 1.2;             /* menos separación entre líneas */
+  color: #ccc;
+}
+
+.footer .row {
+  margin: 0 !important;         /* eliminamos márgenes de las filas */
+}
+
+.footer .col-6,
+.footer .col-md-2,
+.footer .col-md-5 {
+  margin-bottom: 0 !important;  /* quitamos separación extra */
+}
+
+.footer .py-5 {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+}
+
+.footer .my-4 {
+  margin-top: 0.3rem !important;
+  margin-bottom: 0.3rem !important;
+}
+
+.footer .border-top {
+  margin-top: 5px !important;
+  padding-top: 5px !important;
+}
+
+/* Footer personalizado */
+.footer {
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+.footer h5 {
+  color: #b30000; /* rojo */
+}
+
+.footer a {
+  color: #333;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #b30000;
+}
+
+/* Evita que el footer ocupe toda la pantalla */
+.footer {
+  min-height: auto !important;
+  height: auto !important;
+  display: block !important;
+  align-items: unset !important;
+  text-align: left !important;
+}
+.footer p{
+  color: #4C0708;
+}
+
