@@ -151,25 +151,37 @@
       </div>
     </section>
 
-    <!-- Formulario de contacto -->
-    <section id="contacto" class="section-fade-in">
-      <div class="section-content mb-5">
-        <h2 class="text-center mb-4 text-light">Contáctame</h2>
-        <form action="https://davidleonardo1110-sudo.github.io/PAGINA-WEB/" id="formContacto" class="p-4 rounded bg-dark">
-          <div class="mb-3">
-            <input type="text" class="form-control" id="nombre" placeholder="Nombre">
-          </div>
-          <div class="mb-3">
-            <input type="email" class="form-control" id="email" placeholder="Correo">
-          </div>
-          <div class="mb-3">
-            <textarea class="form-control" id="mensaje" rows="4" placeholder="Mensaje"></textarea>
-          </div>
-          <button type="submit" class="btn btn-danger w-100 rounded-3">Enviar</button>
-          <p id="respuesta" class="mt-3 text-center"></p>
-        </form>
+  <!-- Formulario de contacto -->
+<section id="contacto" class="section-fade-in">
+  <div class="section-content mb-5">
+    <h2 class="text-center mb-4 text-light">Contáctame</h2>
+    <form action="https://formsubmit.co/daguers64@tutamil.com" method="POST" id="formContacto" class="p-4 rounded bg-dark">
+      
+      <!-- Nombre -->
+      <div class="mb-3">
+        <input type="text" class="form-control" name="nombre" placeholder="Nombre" required>
       </div>
-    </section>
+      
+      <!-- Correo -->
+      <div class="mb-3">
+        <input type="email" class="form-control" name="email" placeholder="Correo" required>
+      </div>
+      
+      <!-- Mensaje -->
+      <div class="mb-3">
+        <textarea class="form-control" name="mensaje" rows="4" placeholder="Mensaje" required></textarea>
+      </div>
+      
+      <!-- Botón de envío -->
+      <button type="submit" class="btn btn-danger w-100 rounded-3">Enviar</button>
+      
+      <!-- Mensaje de respuesta -->
+      <p id="respuesta" class="mt-3 text-center text-light"></p>
+    </form>
+  </div>
+</section>
+
+
 
 
 
@@ -213,4 +225,5 @@
 </body>
 
 </html>
+
 
